@@ -1,10 +1,9 @@
 const mongoose = require('mongoose');
-const dbHOST = process.env.DBHOST
+const dbHOST = process.env.DBHOST;
+
 mongoose.connect(dbHOST)
-  .then(()=>{
-    console.log('Connected!')
-   
-    app.listen(3000)
-  }).catch(()=> {
-console.log('Connection failed')
-  })
+    .then(() => {
+        console.log('MongoDB Connnected...')
+    }).catch((err) => {
+        console.log('Error while Mongo Conn..', err);
+    })
