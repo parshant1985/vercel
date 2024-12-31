@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 8080;
 app.use(express.json());
 
 app.get('/', (req, res) => {
-    res.send('First api running new deploy');
+    res.send('First api running VERSEL APP');
 });
 app.get('/ping', (req, res) => {
     res.send('<=PONG=>');
