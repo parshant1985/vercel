@@ -3,6 +3,7 @@ const app = express()
 const mongoose = require('mongoose')
 const User = require('./model/user.model')
 require('dotenv').config()
+require('./db');
 app.use(express.json());
 app.get('/', function (req, res) {
   res.send('Hello World update server')
@@ -29,13 +30,3 @@ app.post('/api/users', async(req, res)=> {
   }
 
 })
-
-
-mongoose.connect('mongodb+srv://parshantconnect:n1QtcedBGV9PSzz1@userdetails.vd3h9.mongodb.net/myUsers?retryWrites=true&w=majority&appName=UserDetails')
-  .then(()=>{
-    console.log('Connected!')
-   
-    app.listen(3000)
-  }).catch(()=> {
-console.log('Connection failed')
-  })
